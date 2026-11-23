@@ -1,0 +1,93 @@
+/* RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* LANDING PAGE */
+
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background-color: #171f58;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* REUSABLE BRAND */
+
+.verified-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  padding: 20px;
+}
+
+/* LOGO */
+
+.verified-brand svg {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+/* VERIFIED TEXT */
+
+.verified-title {
+  font-family: Arial, sans-serif;
+  font-size: clamp(38px, 9vw, 56px);
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: #ffffff;
+
+  margin: 18px 0 0;
+}
+
+/* TAGLINE */
+
+.verified-tagline {
+  font-family: Arial, sans-serif;
+  font-size: clamp(13px, 3.5vw, 17px);
+  font-style: italic;
+  font-weight: 500;
+
+  color: #26b7b6;
+
+  margin: 18px 0 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 480px) {
+  .verified-brand svg {
+    width: 110px;
+    height: 110px;
+  }
+
+  .verified-title {
+    font-size: 48px;
+  }
+
+  .verified-tagline {
+    font-size: 14px;
+  }
+}
