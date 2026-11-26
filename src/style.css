@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* RESET */
 
 * {
@@ -91,3 +93,116 @@ body,
     font-size: 14px;
   }
 }
+
+
+/* =================================
+   VERIFIED PAGE TRANSITIONS
+================================= */
+
+.page-enter {
+  animation: pageEnter 0.4s ease-out both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =================================
+   ONBOARDING SLIDE TRANSITIONS
+================================= */
+
+.slide-enter {
+  animation: slideEnter 0.35s ease-out both;
+}
+
+@keyframes slideEnter {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =================================
+   BUTTON LOADING SPINNER
+================================= */
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spinnerRotate 0.7s linear infinite;
+}
+
+@keyframes spinnerRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =================================
+   REDUCED MOTION ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .slide-enter {
+    animation: none;
+  }
+
+  .loading-spinner {
+    animation-duration: 1.5s;
+  }
+}
+
+
+/* =================================
+   VERIFIED RESPONSIVE ONBOARDING
+================================= */
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+/* Tablet and laptop adjustments */
+@media (min-width: 768px) {
+  .onboarding-page {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/* Short screens */
+@media (max-height: 700px) {
+  .onboarding-image {
+    max-height: 280px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-page *,
+  .onboarding-page *::before,
+  .onboarding-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
